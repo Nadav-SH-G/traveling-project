@@ -1,0 +1,103 @@
+﻿@page
+@model project.Pages.RegisterModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="~/css/stylesheet.css" rel="stylesheet" />
+    <title>הרשמה</title>
+	
+</head>
+
+<body dir="rtl">
+
+    <div class="col-xl-6">
+        <div class="card-body p-md-5 text-black">
+            <h3 class="mb-5 text-uppercase">הרשמה</h3>
+
+            <form id="registerForm" method="post" onsubmit="RformSubmit()">
+                <table>
+                    <tr>
+                        <td class="align-top">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="form3Example1m">שם פרטי</label>
+                                <input required type="text" id="fName" class="form-control form-control-lg" />
+                                <span class="ErrorMassage" id="eFName"></span>
+                            </div>
+                        </td>
+                        <td class="align-top">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="form3Example1n">שם משפחה</label>
+                                <input required type="text" id="Lname" class="form-control form-control-lg" />
+                                <span class="ErrorMassage" id="eLname"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-top" colspan="2">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="form3Example1m">שם משתמש</label>
+                                <input required type="text" id="userName" class="form-control form-control-lg" />
+                                <span class="ErrorMassage" id="eUserName"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-top">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="form3Example90">סיסמא</label>
+                                <input required type="password" id="Password" class="form-control form-control-lg" />
+                                <span class="ErrorMassage" id="ePassword"></span>
+                            </div>
+                        </td>
+                        <td class="align-top">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="form3Example90"> הכנס סיסמא שנית</label>
+                                <input required type="password" id="SPassword" class="form-control form-control-lg" />
+                                <span class="ErrorMassage" id="eSPassword"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-top">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="form3Example97">אימייל</label>
+                                <input required type="email" id="Email" class="form-control form-control-lg" />
+                                <span class="ErrorMassage" id="eEmail"></span>
+                            </div>
+                        </td>
+                        <td class="align-top">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="form3Example90">מספר טלפון</label>
+                                <input required type="text" id="Phone" class="form-control form-control-lg" />
+                                <span class="ErrorMassage" id="ePhone"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-top">
+                            <div data-mdb-input-init class="form-outline">
+                                <input required type="date" id="birthdayDate" class="form-control form-control-lg" />
+                                <label class="form-label" for="BirthDay">תאריך לידה</label>
+                                <span class="ErrorMassage" id="eBirthDay"></span>
+                            </div>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="d-flex justify-content-end pt-3">
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">מחק הכל</button>
+                    <button type="submit" id=" " class="btn btn-dark" data-mdb-ripple-init>הירשם</button>
+                </div>
+            </form>
+
+
+            <p>יש לך כבר חשבון? <a href="/Login">התחבר</a>.</p>
+        </div>
+    </div>
+	<script src="~/js/checkregisterform.js"></script>
+</body>
+</html>

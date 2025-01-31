@@ -1,0 +1,57 @@
+﻿@page
+@model project.Pages.LoginModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>התחברות</title>
+	<link href="~/css/stylesheet.css" rel="stylesheet" />
+	<script src="~/js/checkloginform.js"></script>
+</head>
+<body dir="rtl">
+
+
+
+    <div class="col-xl-6">
+        <div class="card-body p-md-5 text-black">
+            <h3 class="mb-5 text-uppercase">הרשמה</h3>
+
+            <form id="loginForm" method="post" onsubmit="return formSubmit()">
+
+                <table>
+                    <tr>
+                        <td class="align-top">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" for="form3Example1m">שם משתמש</label>
+                                <input type="text" id="userName" class="form-control form-control-lg" />
+                                <span class="ErrorMassage" id="eUserName"></span>
+                            </div>
+                        </td>
+                        
+                    </tr>
+                        
+                    <tr>                   
+                        <td class="align-top">
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <label class="form-label" for="form3Example90">סיסמא</label>
+                                <input type="password" id="Password" class="form-control form-control-lg" />
+                                <span class="ErrorMassage" id="ePassword"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="d-flex justify-content-end pt-3">
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">מחק הכל</button>
+                    <button type="submit" class="btn btn-dark" data-mdb-ripple-init>התחבר</button>
+                </div>
+            </form>
+            <p>אין לך חשבון? <a href="/Register">הירשם</a>.</p>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

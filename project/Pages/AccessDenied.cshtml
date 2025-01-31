@@ -1,0 +1,36 @@
+﻿@page
+@model project.Pages.AccessDeniedModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <style>
+        .access-denied-container {
+            text-align: center;
+            margin: 50px auto;
+            max-width: 500px;
+        }
+
+            .access-denied-container img {
+                width: 150px; 
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="access-denied-container">
+        <img src="~/pic/iso472ap.jpg" alt="Access Denied">
+        <h1>אין לך גישה לדף זה</h1>
+        <br/>
+        <p> אתה צריך להירשם לאתר כדי לגשת לעמוד זה.</p>
+        <p> <a href="/Login">התחברות</a> </p> 
+    </div>
+</body>
+</html>

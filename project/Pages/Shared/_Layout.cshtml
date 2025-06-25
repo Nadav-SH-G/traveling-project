@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/index">המלצות לטיולים בישראל</a>
+                <a class="navbar-brand" asp-area="" asp-page="/index"><img src="~/pic/logo.png" align="left" /></a>
 
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -27,15 +27,7 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/index">דף הבית</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Register">הרשמה</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Login">התחברות</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/page1">גן לאומי מצדה</a>
                         </li>
@@ -56,14 +48,28 @@
                         </li>
                         @if(adminValue=="True"){
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/page6">טבלת משתמשים</a>
+                                <a class="nav-link text-dark" asp-area="" asp-page="/UsersTable">טבלת משתמשים</a>
                             </li>
                         }
                     </ul>
                 </div>
-                <div>
-                    <img src="~/pic/logo.png" align="left" />
-                </div>
+                <ul>
+                    @if(String.IsNullOrEmpty(sessionValue)){
+                        <span class="navbar-text"><p class="varela-round-regular">שלום אורח</span>
+                        <div class="d-flex">
+                           <a class="button" href="/Login">התחבר</a>
+                        </div>
+                        
+                    }
+                    else
+                    {
+                        <span class="navbar-text"><p class="varela-round-regular">שלום @sessionValue</span>
+                        <div class="d-flex">
+                            <a class="button" href="/Logout">התנתק</a>
+                        </div>
+
+                    }
+                </ul>
 
             </div>
         </nav>

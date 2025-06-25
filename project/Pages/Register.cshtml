@@ -5,9 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="~/css/stylesheet.css" rel="stylesheet" />
+    <link href="~/css/stylesheet.css" rel="stylesheet" />
     <title>הרשמה</title>
-	
 </head>
 
 <body dir="rtl">
@@ -16,29 +15,29 @@
         <div class="card-body p-md-5 text-black">
             <h3 class="mb-5 text-uppercase">הרשמה</h3>
 
-            <form id="registerForm" method="post" onsubmit="RformSubmit()">
+            <form id="registerForm" method="post">
                 <table>
                     <tr>
                         <td class="align-top">
                             <div data-mdb-input-init class="form-outline">
-                                <label class="form-label" for="form3Example1m">שם פרטי</label>
-                                <input required type="text" id="fName" class="form-control form-control-lg" />
+                                <label class="form-label" for="FirstName">שם פרטי</label>
+                                <input type="text" id="FirstName" name="FirstName" class="form-control form-control-lg" />
                                 <span class="ErrorMassage" id="eFName"></span>
                             </div>
                         </td>
                         <td class="align-top">
                             <div data-mdb-input-init class="form-outline">
-                                <label class="form-label" for="form3Example1n">שם משפחה</label>
-                                <input required type="text" id="Lname" class="form-control form-control-lg" />
-                                <span class="ErrorMassage" id="eLname"></span>
+                                <label class="form-label" for="LastName">שם משפחה</label>
+                                <input type="text" id="LastName" name="LastName" class="form-control form-control-lg" />
+                                <span class="ErrorMassage" id="eLName"></span>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="align-top" colspan="2">
                             <div data-mdb-input-init class="form-outline">
-                                <label class="form-label" for="form3Example1m">שם משתמש</label>
-                                <input required type="text" id="userName" class="form-control form-control-lg" />
+                                <label class="form-label" for="UserName">שם משתמש</label>
+                                <input type="text" id="UserName" name="UserName" class="form-control form-control-lg" />
                                 <span class="ErrorMassage" id="eUserName"></span>
                             </div>
                         </td>
@@ -46,15 +45,15 @@
                     <tr>
                         <td class="align-top">
                             <div data-mdb-input-init class="form-outline">
-                                <label class="form-label" for="form3Example90">סיסמא</label>
-                                <input required type="password" id="Password" class="form-control form-control-lg" />
+                                <label class="form-label" for="Password">סיסמא</label>
+                                <input type="password" id="Password" name="Password" class="form-control form-control-lg" />
                                 <span class="ErrorMassage" id="ePassword"></span>
                             </div>
                         </td>
                         <td class="align-top">
                             <div data-mdb-input-init class="form-outline">
-                                <label class="form-label" for="form3Example90"> הכנס סיסמא שנית</label>
-                                <input required type="password" id="SPassword" class="form-control form-control-lg" />
+                                <label class="form-label" for="SPassword"> הכנס סיסמא שנית</label>
+                                <input type="password" id="SPassword" name="SPassword" class="form-control form-control-lg" />
                                 <span class="ErrorMassage" id="eSPassword"></span>
                             </div>
                         </td>
@@ -62,15 +61,15 @@
                     <tr>
                         <td class="align-top">
                             <div data-mdb-input-init class="form-outline">
-                                <label class="form-label" for="form3Example97">אימייל</label>
-                                <input required type="email" id="Email" class="form-control form-control-lg" />
+                                <label class="form-label" for="Email">אימייל</label>
+                                <input type="email" id="Email" name="Email" class="form-control form-control-lg" />
                                 <span class="ErrorMassage" id="eEmail"></span>
                             </div>
                         </td>
                         <td class="align-top">
                             <div data-mdb-input-init class="form-outline">
-                                <label class="form-label" for="form3Example90">מספר טלפון</label>
-                                <input required type="text" id="Phone" class="form-control form-control-lg" />
+                                <label class="form-label" for="Phone">מספר טלפון</label>
+                                <input type="text" id="Phone" name="Phone" class="form-control form-control-lg" />
                                 <span class="ErrorMassage" id="ePhone"></span>
                             </div>
                         </td>
@@ -78,26 +77,73 @@
                     <tr>
                         <td class="align-top">
                             <div data-mdb-input-init class="form-outline">
-                                <input required type="date" id="birthdayDate" class="form-control form-control-lg" />
                                 <label class="form-label" for="BirthDay">תאריך לידה</label>
+                                <input type="date" id="BirthDay" name="BirthDay" class="form-control form-control-lg" />
                                 <span class="ErrorMassage" id="eBirthDay"></span>
                             </div>
                         </td>
-                        <td>
+
+                        <td class="align-top">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label">מגדר</label>
+                                <div>
+                                    <input type="radio" id="male" name="Gender" value="male" />
+                                    <label for="male">זכר</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="female" name="Gender" value="female" />
+                                    <label for="female">נקבה</label>
+                                </div>
+                                <div>
+                                    <span class="ErrorMassage" id="eGender"></span>
+                                </div>
+                            </div>
                         </td>
+
                     </tr>
+
                 </table>
 
                 <div class="d-flex justify-content-end pt-3">
-                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">מחק הכל</button>
-                    <button type="submit" id=" " class="btn btn-dark" data-mdb-ripple-init>הירשם</button>
+                    <button type="button" onclick="resetRegisterForm()" class="btn btn-light btn-lg">מחק הכל</button>
+                    <button type="submit" class="btn btn-dark" data-mdb-ripple-init>הירשם</button>
                 </div>
             </form>
 
-
+            <script src="~/js/checkregisterform.js"></script>
             <p>יש לך כבר חשבון? <a href="/Login">התחבר</a>.</p>
         </div>
     </div>
-	<script src="~/js/checkregisterform.js"></script>
+    <script>
+        function resetRegisterForm() {
+            const formInputs = document.querySelectorAll('#registerForm input');
+            formInputs.forEach(input => {
+                switch (input.type) {
+                    case 'text':
+                    case 'password':
+                    case 'email':
+                    case 'tel':
+                    case 'date':
+                        input.value = '';
+                        break;
+                    case 'radio':
+                        input.checked = false;
+                        break;
+                    case 'checkbox':
+                        input.checked = false;
+                        break;
+                }
+            });
+            const errorMessages = document.querySelectorAll('.ErrorMassage');
+            errorMessages.forEach(span => {
+                span.textContent = '';
+            });
+            const form = document.getElementById('registerForm');
+            if (form) {
+                form.classList.remove('was-validated');
+            }
+        }
+    </script>
+    <script src="~/js/checkregisterform.js"></script>
 </body>
 </html>

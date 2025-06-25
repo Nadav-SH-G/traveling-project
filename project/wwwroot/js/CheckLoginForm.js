@@ -51,3 +51,10 @@ function checkPassword() {
 
     return true;
 }
+
+function clearForm() {
+    document.getElementById('userName').value = '';
+    document.getElementById('Password').value = '';
+    document.getElementById('eUserName').innerText = '';
+    document.getElementById('ePassword').innerText = '';
+}

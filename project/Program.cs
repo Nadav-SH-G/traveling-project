@@ -1,5 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 
+// Set the DataDirectory to the App_Data folder
+var dataDirectory = Path.Combine(builder.Environment.ContentRootPath, "App_Data");
+AppDomain.CurrentDomain.SetData("DataDirectory", dataDirectory);
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 // Add Session service

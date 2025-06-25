@@ -10,4 +10,12 @@
     <None Include="wwwroot\pic\logofloop.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="App_data\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
+  </ItemGroup>
+
 </Project>

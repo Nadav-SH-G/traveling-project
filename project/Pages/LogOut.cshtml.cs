@@ -5,8 +5,12 @@ namespace project.Pages
 {
     public class LogOutModel : PageModel
     {
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            
+            HttpContext.Session.Clear();
+
+            return RedirectToPage("/Index");
         }
     }
 }

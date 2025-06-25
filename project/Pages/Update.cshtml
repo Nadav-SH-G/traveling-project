@@ -1,0 +1,76 @@
+﻿@page
+@model project.Pages.UpdateModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<script src="~/js/validate.js"></script>
+<h1>Update</h1>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" onsubmit="return validate()">
+            <div class="form-group">
+                <label asp-for="NewUser.ID" class="control-label"></label>
+                <input asp-for="NewUser.ID" class="form-control" readonly id="ID" />
+            </div>
+            <div class="form-group">
+                <label asp-for="NewUser.FirstName" class="control-label"></label>
+                <input asp-for="NewUser.FirstName" class="form-control" oninput="firstNameVal()" id="FirstName" />
+                <div class="form-text alert-danger" id="FNameMsg"></div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="NewUser.LastName" class="control-label"></label>
+                <input asp-for="NewUser.LastName" class="form-control" id="LastName" oninput="lastNameVal()" />
+                <div class="form-text alert-danger" id="LNameMsg"></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewUser.Username" class="control-label"></label>
+                <input asp-for="NewUser.Username" class="form-control" id="Username" oninput="usernameVal()" />
+                <div class="form-text alert-danger" id="UNameMsg"></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewUser.Password" class="control-label"></label>
+                <input asp-for="NewUser.Password" class="form-control" id="Password" type="password" oninput="passwordVal()" />
+                <div class="form-text alert-danger" id="PasswordMsg"></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewUser.Email" class="control-label"></label>
+                <input asp-for="NewUser.Email" class="form-control" id="Email" type="email" oninput="emailVal()" />
+                <div class="form-text alert-danger" id="EmailMsg"></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewUser.Phone" class="control-label"></label>
+                <input asp-for="NewUser.Phone" class="form-control" id="Phone" oninput="phoneVal()" />
+                <div class="form-text alert-danger" id="PhoneMsg"></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewUser.Birthday" class="control-label"></label>
+                <input asp-for="NewUser.Birthday" class="form-control" type="date" id="Birthday" oninput="birthdayVal()" />
+                <div class="form-text alert-danger" id="BirthdayMsg"></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewUser.Admin" class="control-label"></label>
+                <input type="checkbox" asp-for="NewUser.Admin" id="Admin" />
+            </div>
+            @if (Model.msg != "")
+            {
+                <div class="form-group">
+                    <div class="alert alert-danger" role="alert">
+                        @Model.msg
+                    </div>
+                </div>
+            }
+
+
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+
+    </div>
+</div>

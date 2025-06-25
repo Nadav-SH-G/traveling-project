@@ -9,13 +9,15 @@
         res = brithdayCheck() && res;
         res = phoneCheck() && res;
         res = emailCheck() && res;
+        res = GenderCheck() && res;
         console.log("Form validation result: ", res); 
         return res;
     }
+    
 
     function checkUsername() {
         const regex = /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+$/;
-        var username = document.getElementById("userName").value;
+        var username = document.getElementById("UserName").value;
         if (username.length < 2) {
             document.getElementById("eUserName").innerHTML = "שם משתמש צריך להכיל שני תווים לפחות*";
             return false;
@@ -67,7 +69,7 @@
 
     function fNameCheck() {
         var regex3 = /^[A-Za-z\u0590-\u05FF\b]{2,}$/;
-        var Fname = document.getElementById("fName").value;
+        var Fname = document.getElementById("FirstName").value;
         if (!regex3.test(Fname)) {
             document.getElementById("eFName").innerHTML = "חובה 2 אותיות מינימום באנגלית או עברית *";
             return false;
@@ -78,17 +80,18 @@
 
     function LNameCheck() {
         var regex3 = /^[A-Za-z\u0590-\u05FF\b]{2,}$/;
-        var Lname = document.getElementById("Lname").value;
+        var Lname = document.getElementById("LastName").value;
+        const error = document.getElementById("eLName");
         if (!regex3.test(Lname)) {
-            document.getElementById("eLname").innerHTML = "חובה 2 אותיות מינימום באנגלית או עברית *";
+            error.innerHTML = "חובה 2 אותיות מינימום באנגלית או עברית *";
             return false;
         }
-        document.getElementById("eLname").innerHTML = "";
+        error.innerHTML = "";
         return true;
     }
 
     function brithdayCheck() {
-        var date = document.getElementById("birthdayDate").value;
+        var date = document.getElementById("BirthDay").value;
         if (date === "") {
             document.getElementById("eBirthDay").innerHTML = "שדה חובה *";
             return false;
@@ -98,7 +101,7 @@
     }
 
     function phoneCheck() {
-        var phone = document.getElementById("phone").value;
+        var phone = document.getElementById("Phone").value;
         const regex = /^(0[2-49]{1}[0-9]{1}|05|07)[0-9]{1}-[0-9]{7}$/; 
         if (!regex.test(phone)) {
             document.getElementById("ePhone").innerHTML = "טלפון חייב להיות חוקי (כולל מקף ומספרים נכונים)*";
@@ -110,25 +113,49 @@
 
 
     function emailCheck() {
-        var email = document.getElementById("email").value;
+        var email = document.getElementById("Email").value;
         const regex = /^[a-zA-Z][a-zA-Z0-9_-]*@[a-zA-Z][a-zA-Z0-9_-]*\.[a-zA-Z]{2,3}$/;
         if (email.length === 0) {
-            document.getElementById("eEmail").innerHTML = "דוא"ל הוא שדה חובה * ";
+            document.getElementById("eEmail").innerHTML = "שדה חובה *";
             return false;
         }
         if (!regex.test(email)) {
-            document.getElementById("eEmail").innerHTML = "הדוא"ל לא חוקי, בדוק את הפורמט * ";
+            document.getElementById("eEmail").innerHTML = "אימייל שגוי *";
             return false;
         }
         document.getElementById("eEmail").innerHTML = "";
         return true;
     }
+
+    function GenderCheck() {
+        const genderOptions = document.getElementsByName('Gender');
+        let selected = false;
+
+        for (let option of genderOptions) {
+            if (option.checked) {
+                selected = true;
+                break;
+            }
+        }
+
+        const errorSpan = document.getElementById('eGender');
+        if (!selected) {
+            errorSpan.textContent = 'יש לבחור מגדר';
+            return false;
+        } else {
+            errorSpan.textContent = '';
+            return true;
+        }
+    }
+
    
     document.querySelector("form").onsubmit = function (event) {
         console.log("Form submitted");
-        if (!formSubmit()) {
+        if (!RformSubmit()) {
             event.preventDefault(); 
             console.log("Form submission blocked");
         }
     };
+
+    
 });
